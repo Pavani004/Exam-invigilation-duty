@@ -1,0 +1,21 @@
+create database duty;
+use duty;
+
+create table faculty(faculty_name varchar(40),
+gender varchar(40),
+contact_no varchar(60),
+qualification varchar(15),
+username varchar(50),
+password varchar(50));
+
+create table leisuretime(faculty_name varchar(40),
+leisure_time varchar(40),
+status varchar(30),
+allotted_date varchar(30));
+
+create table exam(exam_name varchar(40),
+faculty_name varchar(50),
+hall_number varchar(20),
+exam_time varchar(80),
+exam_date varchar(25));
+

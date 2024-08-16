@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Exam Invigilation Duty</title>
+<meta name="keywords" content="Specific Template, HTML CSS, free website template" />
+<meta name="description" content="Specific Template is a free website template provided by TemplateMo.com" />
+<link rel="stylesheet" href="{{ url_for('static', filename='templatemo_style.css') }}">
+ <script LANGUAGE="Javascript" >
+function validate(){
+	var x=document.forms["f1"]["t1"].value;
+	var y=document.forms["f1"]["t2"].value;
+	
+	if(x == null || x==""){
+		window.alert("Exam name must be enter");
+		document.f1.t1.focus();
+		return false;
+	}
+	if(y == null || y==""){
+		window.alert("Hall No must be enter");
+		document.f1.t2.focus();
+		return false;
+	}
+	return true;
+}
+		
+	
+	</script>
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+
+    	<div id="title">
+		Exam Invigilation Duty</center>
+            
+        </div>
+        
+
+    </div> <!-- end of header -->
+    
+</div> <!-- end of header wrapper -->
+
+<div id="templatemo_menu_wrapper">
+
+    <div id="templatemo_menu">
+           <ul>
+      <li class="nlink"><a href="AddFaculty">Add&nbsp;Faculty</a></li>
+	   <li class="nlink"><a href="AddLeisure">Add&nbsp;Leisure&nbsp;Time</a></li>
+	  <li class="nlink"><a href="ScheduleExam">Schedule&nbsp;Exam&nbsp;Time</a></li>
+	  <li class="nlink"><a href="ViewSchedule">View&nbsp;Scheduled</a></li>
+	   <li class="nlink"><a href="index">Logout</a></li>
+      
+   </ul>
+  </div>
+  <div class="entry">
+   <br/><br/><br/>
+<br/>
+			<div class="msg"><font size="3" color="red"><center>{{ msg }}</center></font></div>
+	
+			<br/>
+	 <br>
+	  <center><font size="4" color="black"><h3>Schedule Exam Screen</font></center>
+<form name ="f1" method="post" action="/ScheduleExamAction" onsubmit="return validate(this);">
+	<br><br>
+
+	<TABLE align=center width="30%" class="notepad">
+		<TR><TH align="left"><font size="2" color="black">Exam&nbsp;Name</font>
+		<TD>&nbsp;<Input type=text name="t1" value='' onchange='fnCallChkAvailability(this)'>
+		<div id='nameid'></div>
+		</TD>
+		</TR>
+		
+		<TR><TH align="left"><font size="2" color="black">Hall&nbsp;No</font>
+		<TD>&nbsp;<Input type=text name="t2" value='' onchange='fnCallChkAvailability(this)'>
+		<div id='nameid'></div>
+		</TD>
+		</TR>
+
+		<TR><TH align="left"><font size="2" color="black">Exam&nbsp;Time</font>
+		<TD>&nbsp;<select name="t3">
+		<option value="9AM - 12AM">9AM - 12AM</option>
+		<option value="10AM - 13PM">10AM - 13PM</option>
+		<option value="11AM - 14PM">11AM - 14PM</option>
+		<option value="12PM - 15PM">12PM - 15PM</option>
+		<option value="13PM - 16PM">13PM - 16PM</option>
+		<option value="14PM - 17PM">14PM - 17PM</option>
+		<option value="15AM - 18PM">15AM - 18PM</option>		
+		</select>
+		</TR>
+
+		<TR><TH align="left"><font size="2" color="black">Exam&nbsp;Date</font>
+		{{ data|safe }}
+		</TR>
+
+		
+		  <TR>
+				 <TD></TD>
+			<TD>	
+		  <input type="submit" value="Submit">
+		 
+		  </TABLE>
+		
+</form>
+</div>
+
+</body>
+</html>

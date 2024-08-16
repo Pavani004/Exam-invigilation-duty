@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Predicting at-Risk Students</title>
+<meta name="keywords" content="Specific Template, HTML CSS, free website template" />
+<meta name="description" content="Specific Template is a free website template provided by TemplateMo.com" />
+<link rel="stylesheet" href="{{ url_for('static', filename='templatemo_style.css') }}">
+ <script LANGUAGE="Javascript" >
+function validate(){
+	var x=document.forms["f1"]["t1"].value;
+	var y=document.forms["f1"]["t2"].value;
+	if(x == null || x==""){
+		window.alert("Student data must be enter");
+		document.f1.t1.focus();
+		return false;
+	}
+	return true;
+}
+		
+	
+	</script>
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+
+    	<div id="title">
+		Predicting at-Risk Students at Different Percentages of Course Length for Early Intervention Using Machine Learning Models</center>
+            
+        </div>
+        
+
+    </div> <!-- end of header -->
+    
+</div> <!-- end of header wrapper -->
+
+<div id="templatemo_menu_wrapper">
+
+    <div id="templatemo_menu">
+           <ul>
+      <li class="nlink"><a href="Predict">Predict&nbsp;at-Risk&nbsp;Student</a></li>
+	   <li class="nlink"><a href="index">Logout</a></li>
+      
+   </ul>
+  </div>
+  <div class="entry">
+   <br/><br/><br/>
+<br/>
+			<div class="msg"><font size="3" color="red"><center>{{ msg|safe }}</center></font></div>
+	
+			<br/>
+	 <br>
+	  <center><font size="4" color="black"><h3>At-Risk Student Screen</font></center>
+<form name ="f1" method="post" action="/PredictAction" onsubmit="return validate(this);">
+	<br><br>
+
+	<TABLE align=center width="30%" class="notepad">
+		<TR><TH align="left"><font size="2" color="black">At-Risk&nbsp;Student&nbsp;Data</font>
+		<TD>&nbsp;<Input type=text name="t1" value='' size="80">
+		<div id='nameid'></div>
+		</TD>
+		</TR>
+		
+		  <TR>
+				 <TD></TD>
+			<TD>	
+		  <input type="submit" value="Submit">
+		 
+		  </TABLE>
+		
+</form>
+</div>
+
+</body>
+</html>
